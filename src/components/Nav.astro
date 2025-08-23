@@ -1,0 +1,52 @@
+---
+import Logo from '../assets/images/logo-lite.svg';
+import ImageLateral from '../assets/images/menu-media.jpg';
+---
+
+<nav > 
+    <div class="menu-bar">
+      <div class="menu-logo">
+        <a href="#" class="menu-logo-flex"><Logo/><span>Javierrocadev</span></a>
+      </div>
+      <div class="menu-toggle-btn">
+        <div class="menu-toggle-label"><p>Menu</p></div>
+        <div class="menu-hamburger-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-overlay">
+      <div class="menu-overlay-content">
+        <div class="menu-media-wrapper">
+          <img src={ImageLateral.src} alt="Menu media" />
+        </div>
+        <div class="menu-content-wrapper">
+          <div class="menu-content-main">
+            <div class="menu-col">
+              <div class="menu-link"><a href="#">Index</a></div>
+              <div class="menu-link"><a href="#">Portfolio</a></div>
+              <div class="menu-link"><a href="#">Ui components</a></div>
+              <div class="menu-link"><a href="#">Connect</a></div>
+            </div>
+  
+            <div class="menu-col">
+              <div class="menu-tag"><a href="#">Linkedin</a></div>
+              <div class="menu-tag"><a href="#">Uiverse</a></div>
+              <div class="menu-tag"><a href="#">Javierrocadev</a></div>
+            </div>
+          </div>
+          <div class="menu-footer">
+            <div class="menu-col">
+              <p>Es, Ir, Arg </p>
+            </div>
+            <div class="menu-col">
+              <p>javierroca.dev@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script src="../scripts/navMenu.js" ></script>
