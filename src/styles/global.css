@@ -42,7 +42,7 @@ a {
   font-weight: 500;
 }
 
-.container {
+.main-container {
   position: relative;
   transform: translateY(0svh);
   background-color: var(--bg);

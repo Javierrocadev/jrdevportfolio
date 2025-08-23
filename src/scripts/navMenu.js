@@ -35,7 +35,7 @@ if (typeof document !== "undefined") {
           splitTextByContainer.push(containerSplits);
         });
       
-        const container = document.querySelector(".container");
+        const container = document.querySelector(".main-container");
         const menuToggleBtn = document.querySelector(".menu-toggle-btn");
         const menuOverlay = document.querySelector(".menu-overlay");
         const menuOverlayContainer = document.querySelector(".menu-overlay-content");
