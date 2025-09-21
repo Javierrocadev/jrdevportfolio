@@ -1,17 +1,62 @@
 ---
-
+import ImageLateral from "../assets/images/perfil-bg.jpg";
+import MPILogo from "../assets/images/mpi-logo.svg";
+import UIverseLogo from "../assets/images/logo-uiverse-linear.svg";
+import Arrow from "../assets/icons/arrow-down-rhombus.svg";
+import Logo from "../assets/images/logo-small-line.svg";
+import Ar from "../assets/images/ar.png";
+import Es from "../assets/images/es.png";
+import Ie from "../assets/images/ie.png";
+import Hero from "./Hero.astro";
+import Grid from "./Grid.astro";
+import GridPhoto from "./GridPhoto.astro";
+import GridUiverse from "./GridUiverse.astro";
+import GridUiverse2 from "./GridUiverse2.astro";
+import FullStackDev from "./FullStackDev.astro";
+import GridUiverse3 from "./GridUiverse3.astro";
+import FunnyBtn from "./FunnyBtn.astro";
+import PruebaFullStack from "./PruebaFullStack.astro";
+import MyTrayectory from "./MyTrayectory.astro";
+import GridUiverse4 from "./GridUiverse4.astro";
+import GridUiverse5 from "./GridUiverse5.astro";
+import Awards from "./Awards.astro";
+import Socials from "./Socials.astro";
+import Proyects from "./Proyects.astro";
+import Video from "./Video.astro";
+import GridOculto from "./GridOculto.astro";
+import CTA from "./CTA.astro";
+import PatternFlow from "./PatternFlow.astro";
 ---
 
 <div class="main-container">
-      <section class="hero">
-        <h1>Modern design system made that looks timeless</h1>
-      </section>
-      <section class="banner">
-        <img src="hero.jpg" alt="" />
-      </section>
-      <section class="outro">
-        <h1>Let’s build something quietly iconic</h1>
-      </section>
-      <div class="text-2xl font-bold text-sky-500 bg-amber-300">Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!Welcome to my portfolio website!</div>
+  <Hero />
 
+  <div class="bento-grid-container">
+    <div class="item column-one">
+      <GridPhoto />
+      <MyTrayectory />
+      <div class="only-2column">
+        <GridOculto />
+      </div>
     </div>
+    <div class="item column-two">
+      <GridUiverse />
+      <GridUiverse2 />
+      <div class="front"><FullStackDev /></div>
+      <div class="ui3"><GridUiverse3 /></div>
+      <!-- este es un poco grande -->
+      <div class="ui4"><GridUiverse4 /></div>
+      <div class="ui5"><GridUiverse5 /></div>
+    </div>
+    <div class="item column-three">
+      <Proyects />
+    </div>
+    <div class="item column-four">
+      <Socials />
+      <Awards />
+         <PatternFlow />
+    </div>
+  </div>
+  <CTA />
+
+</div>

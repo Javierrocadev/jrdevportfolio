@@ -1,0 +1,24 @@
+---
+import ImageLateral from "../assets/images/perfil-bg.jpg";
+---
+
+    <div
+      class="relative p-0.5 h-fit overflow-hidden rounded-xl bg-[#3d3c3d] drop-shadow-xl group"
+    >
+      <div
+        class="p-4 z-[1] flex flex-col items-start gap-3 rounded-lg bg-[#323132] text-white opacity-90"
+      >
+        <!-- content -->
+        <img
+          src={ImageLateral.src}
+          alt="Persona"
+          class="inline-block h-auto w-fit object-cover rounded-xl align-baseline"
+        />
+      </div>
+
+      <div
+        class="absolute transition-all duration-500 top-1/2 -left-1/2 group-hover:top-12 group-hover:-left-1/4 h-48 w-fit -z-10 bg-amber-800 blur-[50px]"
+      >
+      </div>
+    </div>
+  

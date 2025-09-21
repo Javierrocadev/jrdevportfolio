@@ -1,0 +1,68 @@
+---
+import UIverseLogo from "../assets/images/logo-uiverse-linear.svg";
+import Logo from "../assets/images/logo-small-line.svg";
+import ImageLateral from "../assets/images/perfil-bg.jpg";
+import { gsap } from "gsap";
+---
+
+<div class="hero-section" id="hero-section">
+  <div>
+    <!-- Este párrafo tendrá solo fade in (sin movimiento) -->
+    <div class="font-bold font-inter text-white/75 leading-tight first-paragraph">
+      <p class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium">
+        Soy Javier Roca
+        <Logo class="h-[0.6em] w-auto inline-block fill-white/75" />
+      </p>
+    </div>
+    
+    <!-- Estos elementos tendrán fade in con movimiento -->
+    <div class="text-[clamp(2.75rem,_0.4286rem_+_7.4286vw,_6rem)] font-bold max-w-[1000px] text-white leading-tight">
+      Sobre mí.
+    </div>
+    <div class="text-[clamp(1rem,_0.6429rem_+_1.1429vw,_1.5rem)] font-bold text-white leading-tight">
+      <p class="font-light">
+        Conoce un poco lo que fuera del trabajo.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Animación para el primer párrafo (solo fade in)
+    const firstParagraph = document.querySelector('.first-paragraph');
+    if (firstParagraph) {
+      gsap.set(firstParagraph, {
+        opacity: 0
+      });
+      
+      gsap.to(firstParagraph, {
+        opacity: 1,
+        duration: 1.2,
+        ease: "power2.out",
+        delay: 0.3 // Aparece antes que los otros elementos
+      });
+    }
+    
+    // 2. Animación para los otros elementos (fade in con movimiento)
+    const heroElements = document.querySelectorAll('.hero-section > div > div:not(:first-child)');
+    
+    if (heroElements.length === 0) return;
+    
+    gsap.set(heroElements, {
+      opacity: 0,
+      y: 30
+    });
+    
+    gsap.to(heroElements, {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      stagger: 0.3,
+      ease: "power2.out",
+      delay: 0.5
+    });
+  });
+</script>

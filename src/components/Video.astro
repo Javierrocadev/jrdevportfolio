@@ -1,0 +1,39 @@
+---
+import cover from "../assets/images/uiversevideocover.jpg";
+import videoSrc from "../assets/videos/uiversevideo.mp4";
+---
+
+<div class="relative w-full mx-auto">
+  <!-- Poster -->
+  <div
+    id="videoPoster"
+    class="plyr__poster absolute inset-0 bg-cover bg-center rounded-2xl shadow-lg transition-opacity duration-300"
+    style={`background-image: url('/uiversevideocover.jpg');`}
+  ></div>
+
+  <!-- Video -->
+  <video
+    id="hoverVideo"
+    class="relative z-10 w-full rounded-2xl shadow-lg"
+    muted
+    loop
+    playsinline
+    src={videoSrc}
+  ></video>
+</div>
+
+<script>
+  const video = document.getElementById("hoverVideo");
+  const poster = document.getElementById("videoPoster");
+
+  video?.addEventListener("mouseenter", () => {
+    poster.style.opacity = 0;   // Oculta poster al reproducir
+    video.play();
+  });
+
+  video?.addEventListener("mouseleave", () => {
+    video.pause();              // Solo pausa
+    // video.currentTime = 0;   <-- quitar para que no se reinicie
+    poster.style.opacity = 1;   // Muestra poster si quieres
+  });
+</script>
