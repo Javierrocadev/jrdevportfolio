@@ -1,8 +1,30 @@
 ---
+import AboutMeComponent from "./AboutMeComponent.astro";
 import AboutMeHero from "./AboutMeHero.astro";
+import CreativeProcess from "./CreativeProcess.astro";
+import CTA from "./CTA.astro";
+import GridPhoto from "./GridPhoto.astro";
 import Hero from "./Hero.astro";
-
+import Hobbies from "./Hobbies.astro";
+import Steam from "./Steam.astro";
 ---
+
 <div class="main-container">
   <AboutMeHero />
+  <div class="bento-grid-container-about">
+    <div class="item column-one-about">
+      <!-- <GridPhoto /> -->
+      <AboutMeComponent />
+    </div>
+    <div class="item column-two-about">
+      <Steam />
+    </div>
+ 
+  </div>
+  <div class="item column-three-about">
+          <CreativeProcess />
+          <Hobbies />
+         
+    </div>
+       <CTA />
 </div>
