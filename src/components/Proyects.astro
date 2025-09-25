@@ -8,7 +8,7 @@ import Video from "./Video.astro";
   class="relative p-0.5 h-fit overflow-hidden rounded-xl bg-[#3d3c3d] drop-shadow-xl group/parent"
 >
   <div
-    class="h-full px-8 pt-16 pb-8 z-[1] flex flex-col items-start gap-3 rounded-lg bg-[#323132] text-white opacity-90"
+    class="h-full px-4 py-16  sm:px-8 pt-16 sm:pb-8 z-[1] flex flex-col items-start gap-3 rounded-lg bg-[#323132] text-white opacity-90"
   >
     <div
       class="absolute top-5 left-5 flex gap-1 justify-center content-center items-center"
@@ -52,7 +52,7 @@ import Video from "./Video.astro";
   <!-- Contenedor del texto -->
 
 <div class="relative z-30">
-<svg width="28" height="16" viewBox="0 0 28 16" class="loader w-64 transition-all" style="stroke-width: 0.2;">
+<svg width="28" height="16" viewBox="0 0 28 16" class="loader w-44 sm:w-64  transition-all" style="stroke-width: 0.2;">
   <!-- === Guías de construcción (detrás) === -->
   <!-- Líneas rectas -->
   <line x1="-10" y1="0" x2="38" y2="0"
@@ -150,9 +150,9 @@ import Video from "./Video.astro";
   <div class="absolute z-20 w-full h-full top-0 left-0 rounded-2xl bg-sky-900/50  opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 pointer-events-none"></div>
 
   <!-- Contenedor del texto -->
-  <div class="relative p-6 z-30">
+  <div class="relative p-0 sm:p-6 z-30">
     <h3 class="text-2xl font-bold">Tailsnippets</h3>
-    <p>Visualizar snippets de Tailwind CSS. Dark mode y responsive design.</p>
+    <p class="hidden sm:visible">Visualizar snippets de Tailwind CSS. Dark mode y responsive design.</p>
   </div>
 
   <!-- Imágenes -->
@@ -178,9 +178,9 @@ import Video from "./Video.astro";
   <div class="absolute z-20 w-full h-20 top-0 left-0 rounded-2xl bg-amber-900/50  opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 pointer-events-none"></div>
 
         <!-- Contenedor del texto -->
-  <div class="absolute left-5 top-5 p-6 z-30 pointer-events-none">
+  <div class="absolute left-5 top-5 p-0 sm:p-6 z-30 pointer-events-none">
     <h3 class="text-2xl font-bold">Uiverse</h3>
-    <p>Componentes reutilizables con tailwind y css.</p>
+    <p class="hidden sm:visible">Componentes reutilizables con tailwind y css.</p>
   </div>
         <Video />
       </div>
