@@ -95,7 +95,42 @@
             grid-row: 3 / 4;
         }
         
-        /* Responsive */
+ @media (max-width: 1000px) {
+
+  /* Aseguramos que el contenedor use 1 columna y que los items fluyan en filas */
+  .main-container .bento-grid-container-about {
+    grid-template-columns: 1fr !important;
+    grid-auto-flow: row !important;
+    grid-auto-rows: auto !important;
+    gap: 12px !important;
+  }
+
+  /* Forzamos que cada .item del grid ocupe toda la fila (1 / -1) */
+  .main-container .bento-grid-container-about > .item {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    align-self: stretch !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    margin: 0 !important;
+    display: block !important; /* evita que mantengan comportamiento de grid interno heredado */
+  }
+
+  /* Aseguramos que AboutMeComponent (columna 1) y Steam (columna 2) estén en ese orden y apilados */
+  .main-container .bento-grid-container-about > .item.column-one-about,
+  .main-container .bento-grid-container-about > .item.column-two-about {
+    order: 0; /* no debería ser necesario, pero por si hay flex/grid ordering heredado */
+  }
+
+  /* Si hay reglas globales que colocan items por nth-child, anulamos cualquier posicionamiento absoluto */
+  .main-container .bento-grid-container-about > .item:nth-child(n) {
+    /* unset posiciones previas */
+    grid-column-start: unset !important;
+    grid-column-end: unset !important;
+    grid-row-start: unset !important;
+    grid-row-end: unset !important;
+  }
+}
         @media (max-width: 900px) {
             .gallery {
                 grid-template-columns: repeat(2, 1fr);
@@ -109,6 +144,8 @@
             h1 {
                 font-size: 2.2rem;
             }
+            
+            
         }
         
         @media (max-width: 600px) {
