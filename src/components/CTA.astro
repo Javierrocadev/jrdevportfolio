@@ -7,21 +7,22 @@ import { gsap } from "gsap";
 ---
 
 <div class="hero-section container-pattern group" id="hero-section">
+
   <div class="w-full flex flex-col md:flex-row flex-wrap justify-end items-end gap-16  md:justify-between">
     <!-- Este párrafo tendrá solo fade in (sin movimiento) -->
     <div
       class="font-bold w-full md:w-fit l font-inter text-white/75 leading-tight first-paragraph"
     >
       <p
-        class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium"
+        class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium mb-2"
       >
         Soy Javier Roca
         <Logo class="h-[0.6em] w-auto inline-block fill-white/75" />
       </p>
        <div
-        class="text-[clamp(2.75rem,_0.4286rem_+_7.4286vw,_6rem)] font-bold max-w-[1000px] text-white leading-tight"
+        class="text-[clamp(2.75rem,_0.4286rem_+_7.4286vw,_6rem)] mt-4 font-bold max-w-[1000px] text-white leading-tight"
       >
-        Let's work.
+        ¿Trabajamos?
       </div>
     </div>
 
@@ -29,6 +30,7 @@ import { gsap } from "gsap";
      
  
         <button
+          onclick="window.open('https://www.linkedin.com/in/javierrocap/', '_blank')"
           class="border text-gray-50 duration-300 relative group cursor-pointer overflow-hidden h-fit w-56 rounded-md bg-neutral-800 p-2 font-extrabold group-hover:bg-orange-50"
         >
           <!-- Divs de burbujas con z-index bajo -->

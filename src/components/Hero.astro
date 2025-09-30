@@ -9,7 +9,7 @@ import { gsap } from "gsap";
   <div>
     <!-- Este párrafo tendrá solo fade in (sin movimiento) -->
     <div class="font-bold font-inter text-white/75 leading-tight first-paragraph">
-      <p class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium">
+      <p class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium mb-2">
         Soy Javier Roca
         <Logo class="h-[0.6em] w-auto inline-block fill-white/75" />
       </p>
@@ -22,11 +22,13 @@ import { gsap } from "gsap";
     <div class="text-[clamp(1rem,_0.6429rem_+_1.1429vw,_1.5rem)] font-bold text-white leading-tight">
       <p class="font-light">
         En mi tiempo libre, me gusta crear componentes en
-        <img
-          src={UIverseLogo.src}
-          alt="MyPublicInbox Logo"
-          class="inline-block h-[.6em] w-auto object-cover -mx-0.5 align-baseline"
-        />
+        <a href="https://uiverse.io/profile/Javierrocadev" target="_blank" rel="noopener noreferrer">
+          <img
+            src={UIverseLogo.src}
+            alt="MyPublicInbox Logo"
+            class="inline-block h-[.6em] w-auto object-cover -mx-0.5 align-baseline"
+          />
+        </a>
         . Encuentra alguno de ellos en este portfolio.
       </p>
     </div>

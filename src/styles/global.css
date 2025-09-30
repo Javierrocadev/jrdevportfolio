@@ -58,7 +58,6 @@ h2,span {
 
 .bento-grid-container> .item{
   display: grid;
-  gap: 12px;
 }
 
 .item:nth-child(1) {
