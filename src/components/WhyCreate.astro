@@ -8,6 +8,8 @@ import Image4 from "../assets/images/trofeootro.jpg";
 import MockImage from "../assets/images/mock.jpeg";
 import Hifi from "../assets/images/hifi.jpg";
 import Arrow from "../assets/images/arrow-big-right.svg";
+import UiFrame from "../assets/images/ui-frame.svg";
+import UiFramePhoto from "../assets/images/ui-frame.png";
 ---
 
 <div
@@ -41,87 +43,58 @@ import Arrow from "../assets/images/arrow-big-right.svg";
     <p class="text-2xl text-white/50">
         ¿De que sirve el diseño? Siempre he pensado que pese a que tengas la mejor solución, una funcionalidad sea la que vaya a resolver tu problema, lo que una persona realmente necesita... Si no consigues que el usuario haga click en tu botón, si no consigues que llegue siquiera a ver tu solución, solo has perdido el tiempo. Tan importante es la solución que ofrecemos como la forma en la que la presentamos.
     </p>
-    <div
-      class="w-full h-fit flex over flex-col gap-12 justify-center items-center bg-transparent sm:bg-[#171717] rounded-xl p-12 xl:flex-row"
+  <div
+  class="w-full h-80 flex flex-col gap-12 justify-center items-center bg-[#171717] rounded-xl p-12 xl:flex-row relative overflow-hidden group"
+>
+  <!-- Divs animados detrás -->
+  <span
+    class="absolute w-[130%] h-[200%] -bottom-10 -left-10 bg-white rotate-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-left"
+  ></span>
+  <span
+    class="absolute w-[130%] h-[200%] -bottom-10 -left-10 bg-sky-400 rotate-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1300ms] origin-left"
+  ></span>
+  <div
+    class="absolute w-[130%] h-[200%] -bottom-10 -left-10 bg-white rotate-6 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-[1600ms] origin-left"
+  ></div>
+
+  <!-- Imagen que aparece después de la animación -->
+  <img
+    src={UiFramePhoto.src}
+    class="absolute -top-20 -left-0 w-[150%] h-[150%] object-cover origin-top-right opacity-0 group-hover:opacity-100 transition-opacity duration-600 delay-[800ms]"
+  />
+
+  <!-- Contenido del div -->
+  <button
+    class="relative flex items-center gap-1 bg-neutral-600 px-9 py-4 border-4 border-black text-base  rounded-xl font-semibold text-white cursor-pointer overflow-hidden transition-all duration-600 ease-custom group-hover:text-black group-hover:rounded-3xl group group-hover:transition-all  hover:duration-700"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      class="absolute w-6 fill-white z-[9] transition-all duration-700 ease-custom -left-1/4 group-hover:left-4 group-hover:fill-[#212121]"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <img
-        src={MockImage.src}
-        alt="Persona"
-        class=" h-80 w-64 rounded-xl align-baseline"
-      />
-      <Arrow
-        class="rotate-90 xl:rotate-0 w-20 h-auto mt-4 group-hover:fill-[#323132] z-10 relative group-hover:translate-x-6 transition-all duration-700"
-      />
-      <img
-        src={Hifi.src}
-        alt="Persona"
-        class=" h-80 w-64 rounded-xl align-baseline"
-      />
-      <Arrow
-        class="rotate-90 xl:rotate-0 w-20 h-auto mt-4 group-hover:fill-[#323132] z-10 relative group-hover:translate-x-6 transition-all duration-700"
-      />
-      <div
-        class="relative h-80 w-64 overflow-hidden rounded-xl bg-[#3d3c3d] drop-shadow-xl group"
-      >
-        <div
-          class="absolute inset-0.5 z-[1] flex flex-col items-start justify-evenly gap-6 rounded-lg bg-[#323132] p-4 text-white opacity-90"
-        >
-          <div
-            class="h-full w-full overflow-hidden rounded-md bg-white flex justify-center items-center relative before:absolute before:top-1/2 before:-left-44 before:-translate-x-12 before:-translate-y-12 before:w-full before:h-24 before:bg-neutral-100 before:z-10 group-hover:before:left-12 before:transition-all before:duration-700 before:border-y before:border-neutral-200"
-          >
-            <button
-              class="flex z-10 w-32 items-center justify-center gap-4 rounded-md border-2 bg-neutral-800 border-neutral-800 p-2 text-white group-hover:scale-110 duration-1000 transition-all"
-            >
-              <div class="h-0.5 w-20 shrink-0 rounded-full bg-white"></div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="shrink-0 stroke-white"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M5 12l14 0"></path>
-                <path d="M13 18l6 -6"></path>
-                <path d="M13 6l6 6"></path>
-              </svg>
-            </button>
-          </div>
-          <div class="flex justify-between w-full items-center">
-            <div class="">
-              <p class="text-xl font-bold">Buttons</p>
-              <p class="">3 variants</p>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-8 h-8 -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 duration-300 transition-all"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M5 12l14 0"></path>
-              <path d="M13 18l6 -6"></path>
-              <path d="M13 6l6 6"></path>
-            </svg>
-          </div>
-        </div>
-        <div
-          class="absolute transition-all duration-500 top-1/2 -left-1/2 group-hover:top-12 group-hover:-left-1/4 h-48 w-56 -z-10 bg-amber-800 blur-[50px]"
-        >
-        </div>
-      </div>
-    </div>
+      <path
+        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+      ></path>
+    </svg>
+    <span
+      class="relative z-[1] transition-all duration-700 ease-custom -translate-x-3 group-hover:translate-x-3"
+      >Modern Button</span
+    >
+    <span
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full opacity-0 transition-all duration-700 ease-custom group-hover:w-[220px] group-hover:h-[220px] group-hover:opacity-100"
+    ></span>
+    <svg
+      viewBox="0 0 24 24"
+      class="absolute w-6 fill-white z-[9] transition-all duration-700 ease-custom right-4 group-hover:-right-1/4 group-hover:fill-[#212121]"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+      ></path>
+    </svg>
+  </button>
+</div>
+
 
    
   </div>
