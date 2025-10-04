@@ -271,6 +271,13 @@ nav {
   color: var(--menu-fg-secondary);
   z-index: 2;
 }
+ @media (max-width: 600px) {
+
+  .menu-bar {
+    padding: 2rem 1rem;
+  }
+  }
+
 
 .menu-logo-flex span {
   font-size: 1.5rem;
