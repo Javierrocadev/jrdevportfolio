@@ -4,73 +4,50 @@ import Logo from "../assets/images/logo-small-line.svg";
 import Arrow from "../assets/images/arrow-big-right.svg";
 import ImageLateral from "../assets/images/perfil-bg.jpg";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 ---
 
 <div class="hero-section container-pattern group" id="hero-section">
-
-  <div class="w-full flex flex-col md:flex-row flex-wrap justify-end items-end gap-16  md:justify-between">
+  <div class="w-full flex flex-col md:flex-row flex-wrap justify-end items-end gap-16 md:justify-between">
     <!-- Este párrafo tendrá solo fade in (sin movimiento) -->
-    <div
-      class="font-bold w-full md:w-fit l font-inter text-white/75 leading-tight first-paragraph"
-    >
-      <p
-        class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium mb-2"
-      >
+    <div class="font-bold w-full md:w-fit l font-inter text-white/75 leading-tight first-paragraph">
+      <p class="text-[clamp(0.75rem,_0.2143rem_+_1.7143vw,_1.5rem)] font-medium mb-2">
         Soy Javier Roca
         <Logo class="h-[0.6em] w-auto inline-block fill-white/75" />
       </p>
-       <div
-        class="text-[clamp(2.75rem,_0.4286rem_+_7.4286vw,_6rem)] mt-4 font-bold max-w-[1000px] text-white leading-tight"
-      >
+      <div class="text-[clamp(2.75rem,_0.4286rem_+_7.4286vw,_6rem)] mt-4 font-bold max-w-[1000px] text-white leading-tight">
         ¿Trabajamos?
       </div>
     </div>
 
+    <!-- Botón con animación scroll en móvil -->
+    <button
+      onclick="window.open('https://www.linkedin.com/in/javierrocap/', '_blank')"
+      class="mobile-animated-button border text-gray-50 duration-300 relative group cursor-pointer overflow-hidden h-fit w-56 rounded-md bg-neutral-800 p-2 font-extrabold group-hover:bg-orange-50"
+    >
+      <!-- Divs de burbujas con z-index bajo -->
+      <div class="absolute group-hover:-top-1 group-hover:-right-2 w-16 h-16 rounded-full group-hover:scale-150 duration-700 right-12 top-12 group-hover:blur-sm bg-amber-800 z-0 mobile-bubble-1"></div>
+      <div class="absolute group-hover:-top-1 group-hover:-right-2 w-12 h-12 rounded-full group-hover:scale-150 duration-700 right-20 -top-6 group-hover:blur-sm bg-amber-800 z-0 mobile-bubble-2"></div>
+      <div class="absolute group-hover:-top-1 group-hover:-right-2 w-8 h-8 rounded-full group-hover:scale-150 duration-700 right-32 top-6 group-hover:blur-sm bg-amber-800 z-0 mobile-bubble-3"></div>
+      <div class="absolute group-hover:-top-1 group-hover:-right-2 w-4 h-4 rounded-full group-hover:scale-150 duration-700 right-2 top-12 group-hover:blur-sm bg-amber-700 z-0 mobile-bubble-4"></div>
 
-     
- 
-        <button
-          onclick="window.open('https://www.linkedin.com/in/javierrocap/', '_blank')"
-          class="border text-gray-50 duration-300 relative group cursor-pointer overflow-hidden h-fit w-56 rounded-md bg-neutral-800 p-2 font-extrabold group-hover:bg-orange-50"
-        >
-          <!-- Divs de burbujas con z-index bajo -->
-          <div
-            class="absolute group-hover:-top-1 group-hover:-right-2 w-16 h-16 rounded-full group-hover:scale-150 duration-700 right-12 top-12 group-hover:blur-sm bg-amber-800 z-0"
-          >
-          </div>
-          <div
-            class="absolute group-hover:-top-1 group-hover:-right-2 w-12 h-12 rounded-full group-hover:scale-150 duration-700 right-20 -top-6 group-hover:blur-sm bg-amber-800 z-0"
-          >
-          </div>
-          <div
-            class="absolute group-hover:-top-1 group-hover:-right-2 w-8 h-8 rounded-full group-hover:scale-150 duration-700 right-32 top-6 group-hover:blur-sm bg-amber-800 z-0"
-          >
-          </div>
-          <div
-            class="absolute group-hover:-top-1 group-hover:-right-2 w-4 h-4 rounded-full group-hover:scale-150 duration-700 right-2 top-12 group-hover:blur-sm bg-amber-700 z-0"
-          >
-          </div>
-
-          <!-- Flecha con z-index alto -->
-          <div class="relative inline-block">
-            <Arrow
-              class="w-28 h-auto mt-4 group-hover:fill-[#323132] z-10 relative group-hover:translate-x-6 transition-all duration-700"
-            />
-            <div
-              class="custom-shadows absolute w-2 rounded-2xl h-8 top-14 -left-1 bg-[#323132] z-20 opacity-0 group-hover:translate-x-6 group-hover:opacity-100 transition-all duration-700"
-            >
-            </div>
-          </div></button
-        >
-     
-  
+      <!-- Flecha con z-index alto -->
+      <div class="relative inline-block">
+        <Arrow class="w-28 h-auto mt-4 group-hover:fill-[#323132] z-10 relative group-hover:translate-x-6 transition-all duration-700 mobile-arrow" />
+        <div class="custom-shadows absolute w-2 rounded-2xl h-8 top-14 -left-1 bg-[#323132] z-20 opacity-0 group-hover:translate-x-6 group-hover:opacity-100 transition-all duration-700 mobile-shadow"></div>
+      </div>
+    </button>
   </div>
 </div>
 
 <script>
   import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   document.addEventListener("DOMContentLoaded", () => {
+    // Registrar ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
     // 1. Animación para el primer párrafo (solo fade in)
     const firstParagraph = document.querySelector(".first-paragraph");
     if (firstParagraph) {
@@ -106,5 +83,110 @@ import { gsap } from "gsap";
       ease: "power2.out",
       delay: 0.5,
     });
+
+    // 3. Animación scroll para el botón en móvil
+    if (window.innerWidth < 768) {
+      const animatedButton = document.querySelector('.mobile-animated-button');
+      
+      if (animatedButton) {
+        // Timeline para la animación del botón
+        const buttonTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: animatedButton,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        });
+
+        // Animación del fondo del botón
+        buttonTl.to(animatedButton, {
+          backgroundColor: "#fef7ed", // bg-orange-50
+          duration: 0.6,
+          ease: "power2.out"
+        });
+
+        // Animación de las burbujas (en paralelo)
+        buttonTl.to('.mobile-bubble-1', {
+          top: -4,
+          right: -8,
+          scale: 1.5,
+          filter: "blur(4px)",
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+
+        buttonTl.to('.mobile-bubble-2', {
+          top: -4,
+          right: -8,
+          scale: 1.5,
+          filter: "blur(4px)",
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+
+        buttonTl.to('.mobile-bubble-3', {
+          top: -4,
+          right: -8,
+          scale: 1.5,
+          filter: "blur(4px)",
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+
+        buttonTl.to('.mobile-bubble-4', {
+          top: -4,
+          right: -8,
+          scale: 1.5,
+          filter: "blur(4px)",
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+
+        // Animación de la flecha y sombra
+        buttonTl.to('.mobile-arrow', {
+          x: 24, // translate-x-6 equivalente
+          fill: "#323132",
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+
+        buttonTl.to('.mobile-shadow', {
+          x: 24, // translate-x-6 equivalente
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        }, "-=0.3");
+      }
+    }
   });
 </script>
+
+<style>
+  /* Solo deshabilitar hover en móvil para evitar conflictos */
+  @media (max-width: 767px) {
+    .mobile-animated-button:hover {
+      background-color: rgb(38 38 38) !important; /* bg-neutral-800 */
+    }
+    
+    .mobile-animated-button:hover .mobile-bubble-1,
+    .mobile-animated-button:hover .mobile-bubble-2,
+    .mobile-animated-button:hover .mobile-bubble-3,
+    .mobile-animated-button:hover .mobile-bubble-4 {
+      top: 3rem !important;
+      right: 3rem !important;
+      scale: 1 !important;
+      filter: blur(0) !important;
+    }
+    
+    .mobile-animated-button:hover .mobile-arrow {
+      transform: translateX(0) !important;
+      fill: currentColor !important;
+    }
+    
+    .mobile-animated-button:hover .mobile-shadow {
+      transform: translateX(0) !important;
+      opacity: 0 !important;
+    }
+  }
+</style>
