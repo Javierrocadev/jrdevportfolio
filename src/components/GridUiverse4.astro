@@ -4,6 +4,7 @@
 
 <div
   class="relative h-full p-0.5 overflow-hidden rounded-xl bg-[#3d3c3d] drop-shadow-xl group"
+  id="animated-card"
 >
   <div
     class="px-4 py-16 sm:p-16 z-[1] h-full flex flex-col items-center justify-center gap-3 rounded-lg bg-[#323132] text-white opacity-90"
@@ -11,10 +12,9 @@
    
     <!-- content -->
    <div class="w-full h-48 group bg-neutral-100 p-4 overflow-hidden flex justify-center relative rounded-xl ">
-  <div class=" grid grid-cols-3  place-items-center  transition-all duration-300 w-max absolute left-1/2 transform -translate-x-1/2 ">
+  <div class="grid grid-cols-3 place-items-center transition-all duration-300 w-max absolute left-1/2 transform -translate-x-1/2" id="button-grid">
 
-    <!-- poner  grid-rows-3 para espacio igual siempre  -->
-    <div class="flex justify-center  duration-[2000ms] p-2 group-hover:blur-xs  border-neutral-400 border-b-2 border-r-2 rounded-br-md items-center">
+    <div class="flex justify-center duration-[2000ms] p-2 group-hover:blur-xs border-neutral-400 border-b-2 border-r-2 rounded-br-md items-center button-cell" data-direction="top-left">
        <button class="group-hover:-translate-4 duration-500 flex w-fit items-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
@@ -25,9 +25,10 @@
             </svg>
           </button>
     </div>
-    <div class="group-hover:-translate-y-4 group-hover:blur-xs duration-500 w-full">
-<button class=" duration-[2000ms] flex w-full items-center justify-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
-            <div class=" h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
+    
+    <div class="group-hover:-translate-y-4 group-hover:blur-xs duration-500 w-full button-cell" data-direction="top">
+      <button class="duration-[2000ms] flex w-full items-center justify-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
+            <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M5 12l14 0" />
@@ -37,7 +38,7 @@
           </button>
     </div>
    
-    <div  class="flex justify-center  duration-[2000ms] p-2 group-hover:blur-xs border-neutral-400 border-b-2 border-l-2 rounded-bl-md items-center">
+    <div class="flex justify-center duration-[2000ms] p-2 group-hover:blur-xs border-neutral-400 border-b-2 border-l-2 rounded-bl-md items-center button-cell" data-direction="top-right">
        <button class="group-hover:translate-x-4 group-hover:-translate-y-4 duration-500 flex w-fit items-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
@@ -49,11 +50,7 @@
           </button>
     </div>
 
-
-
-
-
- <div  class="flex justify-center group-hover:blur-xs  duration-[2000ms] px-2  border-dotted items-center ">
+    <div class="flex justify-center group-hover:blur-xs duration-[2000ms] px-2 border-dotted items-center button-cell" data-direction="left">
        <button class="group-hover:-translate-x-4 duration-500 flex w-fit items-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
@@ -63,7 +60,9 @@
               <path d="M13 6l6 6" />
             </svg>
           </button>
-    </div> <button class="flex w-full items-center justify-center gap-4 rounded-md border-2 bg-neutral-800 border-neutral-800 p-2 text-white">
+    </div>
+    
+    <button class="flex w-full items-center justify-center gap-4 rounded-md border-2 bg-neutral-800 border-neutral-800 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-white"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-white">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -72,7 +71,8 @@
               <path d="M13 6l6 6" />
             </svg>
           </button>
-           <div  class="flex justify-center group-hover:blur-xs  duration-[2000ms] px-2  border-dotted items-center  ">
+          
+    <div class="flex justify-center group-hover:blur-xs duration-[2000ms] px-2 border-dotted items-center button-cell" data-direction="right">
        <button class="group-hover:translate-x-4 duration-500 flex w-fit items-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
@@ -84,13 +84,7 @@
           </button>
     </div>
 
-
-
-
-
-
-
-   <div  class="flex justify-center   p-2 group-hover:blur-xs duration-[2000ms] border-neutral-400 border-t-2 border-r-2 rounded-tr-md items-center">
+    <div class="flex justify-center p-2 group-hover:blur-xs duration-[2000ms] border-neutral-400 border-t-2 border-r-2 rounded-tr-md items-center button-cell" data-direction="bottom-left">
        <button class="group-hover:-translate-x-4 group-hover:translate-y-4 duration-500 flex w-fit items-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
@@ -101,8 +95,9 @@
             </svg>
           </button>
     </div>
-     <div class="group-hover:translate-y-4 group-hover:blur-xs duration-500 w-full">
-    <button class=" duration-[2000ms] flex w-full items-center justify-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
+    
+    <div class="group-hover:translate-y-4 group-hover:blur-xs duration-500 w-full button-cell" data-direction="bottom">
+      <button class="duration-[2000ms] flex w-full items-center justify-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -111,8 +106,9 @@
               <path d="M13 6l6 6" />
             </svg>
           </button>
-     </div>
-    <div  class="flex justify-center  duration-[2000ms] p-2 group-hover:blur-xs border-neutral-400 border-t-2 border-l-2 rounded-tl-md items-center">
+    </div>
+    
+    <div class="flex justify-center duration-[2000ms] p-2 group-hover:blur-xs border-neutral-400 border-t-2 border-l-2 rounded-tl-md items-center button-cell" data-direction="bottom-right">
        <button class="group-hover:translate-4 group-hover:blur-xs duration-500 flex w-fit items-center gap-4 rounded-md border-2 border-dotted border-neutral-300 p-2 text-white">
             <div class="h-0.5 w-20 shrink-0 rounded-full bg-neutral-300"></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-neutral-300">
@@ -123,18 +119,93 @@
             </svg>
           </button>
     </div> 
-
-    
   </div>
-  
 </div>
-
-
 
   </div>
 
   <div
     class="absolute transition-all duration-500 top-1/2 -left-1/2 group-hover:top-12 group-hover:-left-1/4 h-48 w-56 -z-10 bg-amber-800 blur-[50px]"
+    id="glow-effect"
   >
   </div>
 </div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+    // Animación con scroll en móvil
+    const card = document.getElementById('animated-card');
+    const cells = document.querySelectorAll('.button-cell');
+    const glow = document.getElementById('glow-effect');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: card,
+        start: "top center",
+        end: "bottom center",
+        scrub: 0.5,
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Animar cada celda según su dirección
+    cells.forEach((cell) => {
+      const button = cell.querySelector('button');
+      const direction = cell.getAttribute('data-direction');
+      
+      let x = 0, y = 0;
+      
+      switch(direction) {
+        case 'top':
+          y = -16;
+          break;
+        case 'bottom':
+          y = 16;
+          break;
+        case 'left':
+          x = -16;
+          break;
+        case 'right':
+          x = 16;
+          break;
+        case 'top-left':
+          x = -16;
+          y = -16;
+          break;
+        case 'top-right':
+          x = 16;
+          y = -16;
+          break;
+        case 'bottom-left':
+          x = -16;
+          y = 16;
+          break;
+        case 'bottom-right':
+          x = 16;
+          y = 16;
+          break;
+      }
+      
+      tl.to(button, {
+        x: x,
+        y: y,
+        filter: "blur(2px)",
+        duration: 0.5
+      }, 0);
+    });
+
+    // Animar el efecto de brillo
+    tl.to(glow, {
+      top: "3rem",
+      left: "-25%",
+      duration: 0.5
+    }, 0);
+  }
+</script>
