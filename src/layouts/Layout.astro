@@ -1,5 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
+const { title = "Javierrocadev" } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,8 +9,10 @@ import Nav from "../components/Nav.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+   		<title>{title}</title>
 	</head>
 	<body>
 		<Nav />
